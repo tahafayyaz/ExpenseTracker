@@ -1,9 +1,16 @@
 <h1>Pages#home</h1>
 
 <% if current_employee %>
-  <%= link_to 'Profile Setup', edit_employee_registration_path%>
+  <h1> Employee Homepage </h1>
+  <%= link_to 'Employee Profile Setup', edit_employee_registration_path %>
   <%= link_to 'Sign out', destroy_employee_session_path, method: :delete %>
+
+<% elsif current_manager %>
+  <h1>Manager Homepage</h1>
+  <%= link_to 'Manager Profile Setup', edit_manager_registration_path %>
+  <%= link_to 'Manager Sign out', destroy_manager_session_path, method: :delete %>
+
 <% else %>
-  <%= link_to 'Sign up', new_employee_registration_path %>
-  <%= link_to 'Sign in', new_employee_session_path %>
+  <%= link_to 'Manager Log_in', new_manager_session_path %>
+  <%= link_to 'Employee Log_in', new_employee_session_path %>
 <% end %>
