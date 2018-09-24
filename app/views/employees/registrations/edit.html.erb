@@ -9,13 +9,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :salary %>
-    <%= f.text_field :salary, autocomplete: "salary" %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </div>
 
   <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+   <%= render_image_tag(@employee.image) %>
   </div>
 
   <div class="field">
